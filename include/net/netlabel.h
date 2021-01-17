@@ -244,7 +244,7 @@ struct netlbl_calipso_ops {
 			    struct netlbl_lsm_secattr *secattr);
 	int (*sock_setattr)(struct sock *sk,
 			    const struct calipso_doi *doi_def,
-			    const struct netlbl_lsm_secattr *secattr);	
+			    const struct netlbl_lsm_secattr *secattr);
 	void (*sock_delattr)(struct sock *sk);
 	int (*req_setattr)(struct request_sock *req,
 			   const struct calipso_doi *doi_def,
