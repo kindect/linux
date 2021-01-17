@@ -244,7 +244,7 @@ struct netlbl_calipso_ops {
 			    struct netlbl_lsm_secattr *secattr);
 	int (*sock_setattr)(struct sock *sk,
 			    const struct calipso_doi *doi_def,
-			    const struct netlbl_lsm_secattr *secattr);
+			    const struct netlbl_lsm_secattr *secattr);	
 	void (*sock_delattr)(struct sock *sk);
 	int (*req_setattr)(struct request_sock *req,
 			   const struct calipso_doi *doi_def,
@@ -655,6 +655,7 @@ static inline int netlbl_skbuff_getattr(const struct sk_buff *skb,
 	return -ENOSYS;
 }
 static inline void netlbl_skbuff_err(struct sk_buff *skb,
+				     u16 family,
 				     int error,
 				     int gateway)
 {
